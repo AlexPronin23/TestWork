@@ -71,3 +71,25 @@ body{
 .table tbody tr:last-child td:last-child {
 	border-radius: 0 0 20px 0;
 }
+
+.table__loading{
+
+	text-align: center;
+	animation: up 3s ease-in-out infinite ;
+	font-size: 30px;
+}
+
+@keyframes up {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
