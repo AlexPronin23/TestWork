@@ -93,3 +93,25 @@ body{
     opacity: 1;
   }
 }
+
+.table__pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.table__previous:disabled{
+  opacity: .5;
+  cursor: default;
+}
+
+.table__control{
+  display: flex;
+  gap: 10px;
+}
+
+.table__select {
+  border: 1px black solid;
+  border-radius: 50px;
+}
