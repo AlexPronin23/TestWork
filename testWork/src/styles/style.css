@@ -108,10 +108,21 @@ body{
 
 .table__control{
   display: flex;
+  align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
+
+.table__filter{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 
 .table__select {
   border: 1px black solid;
   border-radius: 50px;
+  padding: 10px;
 }
