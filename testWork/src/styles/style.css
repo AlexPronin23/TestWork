@@ -79,6 +79,13 @@ body{
 	font-size: 30px;
 }
 
+.table__error{
+  color:#ff0000;
+  text-align: center;
+	animation: up 3s ease-in-out infinite ;
+	font-size: 30px;
+}
+
 @keyframes up {
   0% {
     transform: scale(1);
@@ -126,3 +133,4 @@ body{
   border-radius: 50px;
   padding: 10px;
 }
+
