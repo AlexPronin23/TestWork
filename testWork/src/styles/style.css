@@ -2,6 +2,8 @@
 
 body{
      font-family: "Inter", sans-serif;
+     position: relative;
+     overflow: hidden;
 }
 
 .table__wrapper{
@@ -16,6 +18,11 @@ body{
     margin-top: 50px;
     margin-bottom: 20px;
 	border-collapse: separate;
+}
+
+.table th {
+  position: relative;
+  user-select: none;
 }
 
 .table thead th {
@@ -45,7 +52,7 @@ body{
 	border: none;
 	padding: 10px 15px;
 	vertical-align: top;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .table tbody tr{
@@ -56,6 +63,77 @@ body{
   color: green;
   transform: translateY(-4px);
 }
+
+
+ /* Модальное окно */
+
+ .table__modal {
+  position: fixed;
+  z-index: 9;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  height: 100vh;
+  width: 100vw ;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(2px); 
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .5s ease-in-out;
+  pointer-events: none;
+
+ }
+
+ .table__modal__content{
+
+  position: relative;
+
+  width: 500px;
+  padding: 30px;
+
+  background-color: #ffff;
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px 5px rgba(0,0,0,.2);
+
+  text-align: center ;
+  transform: scale(0.8);
+  transition: transform 0.5s ease-in-out;
+}
+
+ .table__modal.open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+ }
+
+
+.table__modal.open .table__modal__content {
+  transform: scale(1);
+}
+
+ .table__modal__close {
+
+  position: absolute;
+  left: 90%;
+
+  font-size: 30px;
+  transition: color .5s ease-in-out;
+
+ }
+
+ .table__modal__close:hover{
+  color: #ff0000;
+ }
 
 
 
@@ -133,4 +211,31 @@ body{
   border-radius: 50px;
   padding: 10px;
 }
+
+/* Стили для ресайза колонок */
+.table__resizable {
+  position: relative;
+  min-width: 50px;
+}
+
+.table__resize__handle {
+  position: absolute;
+  right: -3px;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.table__resize__handle:hover {
+  background: rgba(74, 108, 247, 0.3);
+}
+
+.table__resize__handle.active {
+  background: #4a6cf7;
+}
+
 

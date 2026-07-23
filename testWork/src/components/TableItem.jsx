@@ -8,10 +8,11 @@ const TableItem = ({
   email,
   phone,
   address,
+  fetchOneUser,
 }) => {
   return (
     <>
-      <tr key={id}>
+      <tr key={id} onClick={() => fetchOneUser(id)}>
         <td>{firstName}</td>
         <td>{lastName}</td>
         <td>{maidenName || "-"}</td>
